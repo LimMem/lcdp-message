@@ -1,23 +1,49 @@
-const path = require('path');
+const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
-  mode: 'production',
-  entry: './src/index.ts',
+  mode: "production",
+  entry: "./src/index.ts",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'lcdpmessage.min.js',
-    library: 'LcdpMessage',
+    path: path.resolve(__dirname, "dist"),
+    filename: "lcdpmessage.min.js",
+    library: "LcdpMessage",
   },
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+    }),
+  ],
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
+        test: /\.(js|jsx|ts|tsx|mjs)$/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [
+              "@babel/preset-typescript",
+              [
+                "@babel/preset-env",
+                {
+                  useBuiltIns: "entry",
+                },
+              ],
+            ],
+          },
+        },
+        include: path.resolve(__dirname, "src"),
         exclude: /node_modules/,
       },
+      // {
+      //   test: /\.tsx?$/,
+      //   use: "ts-loader",
+      //   exclude: /node_modules/,
+      //   include: path.resolve(__dirname, "src"),
+      // },
     ],
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
+    extensions: [".tsx", ".ts", ".js"],
   },
 };

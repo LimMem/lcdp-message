@@ -25,10 +25,15 @@
     "pub": "npm run build && npm publish"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-typescript": "^7.15.0",
     "@lotus-ui/tools": "^0.2.5",
     "@types/qs": "^6.5.3",
     "@types/shelljs": "^0.8.5",
     "@walrus/cli": "^0.0.6",
+    "babel-loader": "^8.2.2",
     "gh-pages": "^2.1.1",
     "qs": "^6.7.0",
     "shelljs": "^0.8.3",
@@ -37,7 +42,8 @@
     "typedoc": "^0.15.0",
     "typescript": "^3.4.5",
     "webpack": "^5.51.0",
-    "webpack-cli": "^4.8.0"
+    "webpack-cli": "^4.8.0",
+    "@babel/polyfill": "^7.12.1"
   },
   "publishConfig": {
     "access": "public"
@@ -50,5 +56,10 @@
   "bugs": {
     "url": "https://github.com/LimMem/lcdp-message/issues"
   },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE 10"
+  ],
   "homepage": "https://github.com/LimMem/lcdp-message#readme"
 }
