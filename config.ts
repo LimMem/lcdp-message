@@ -46,4 +46,4 @@ function packageConfig(mode = "production") {
   return targetVal;
 }
 
-module.exports = [packageConfig("production"), packageConfig("development")];
+module.exports = packageConfig;
