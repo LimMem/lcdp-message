@@ -7,7 +7,6 @@ const { exec } = require("child_process");
 const processExec = async (command) => {
   return new Promise((resolve, reject) => {
     exec(command, function (error, stdout, stderr) {
-      console.log("tag", error);
       if (error) {
         reject(error);
         process.exit(0);
@@ -55,7 +54,7 @@ const commitAllCodeToGit = async () => {
   await processExec(
     `git tag -a v${package.version} -m "${package.version}版本发包"`
   );
-  await processExec("$ git push --tags");
+  await processExec("git push --tags");
   console.log("代码已提交");
 };
 

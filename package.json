@@ -1,6 +1,6 @@
 {
   "name": "lcdp-message",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "灵犀编辑器webview组件数据交互工具",
   "repository": {
     "type": "git",
@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "main": "lib/index.js",
-  "unpkg": "dist/0.1.6/lcdpmessage.min.js",
+  "unpkg": "dist/0.1.7/lcdpmessage.min.js",
   "module": "es/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -23,7 +23,7 @@
     "build": "lotus-tools build && webpack --config webpack.config.js",
     "predeploy": "yarn docs",
     "deploy": "gh-pages -d .typedoc",
-    "pub": "bash ./scripts/publish.js"
+    "pub": "node ./scripts/publish.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
