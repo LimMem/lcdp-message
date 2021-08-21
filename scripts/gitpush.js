@@ -32,7 +32,7 @@ const dynamicUmdFilePath = () => {
 };
 
 const main = async () => {
-  await processExec("git add ./dist");
+  await processExec("git add .");
   await processExec(`git commit -m "提交umd(${package.version})版本"`);
   await processExec("git push origin master");
   dynamicUmdFilePath();
