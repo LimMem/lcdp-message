@@ -1,6 +1,6 @@
 {
   "name": "lcdp-message",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "灵犀编辑器webview组件数据交互工具",
   "repository": {
     "type": "git",
@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "main": "lib/index.js",
-  "unpkg": "dist/0.1.3/lcdpmessage.min.js",
+  "unpkg": "dist/0.1.5/lcdpmessage.min.js",
   "module": "es/index.js",
   "types": "lib/index.d.ts",
   "files": [

@@ -39,8 +39,8 @@ const incrementVersion = () => {
 };
 
 const dynamicPackageFile = () => {
-  package.unpkg = `dist/${package.version}/lcdpmessage.min.js`;
   package.version = incrementVersion();
+  package.unpkg = `dist/${package.version}/lcdpmessage.min.js`;
   writeFileSync(
     resolve(process.cwd(), "package.json"),
     JSON.stringify(package, null, 2)
@@ -48,23 +48,27 @@ const dynamicPackageFile = () => {
 };
 
 const commitAllCodeToGit = async () => {
-  console.log("正在提交代码...");
+  console.log("开始提交代码...");
   await processExec("git add .");
   await processExec(`git commit -m "${package.version}版本发包"`);
   await processExec("git push origin master");
   await processExec(
     `git tag -a v${package.version} -m "${package.version}版本发包"`
   );
-  await processExec("$ git push origin --tags");
+  await processExec("$ git push --tags");
   console.log("代码已提交");
 };
 
 const build = async () => {
+  console.log("开始编译代码...");
   await processExec("npm run build");
+  console.log("编译完成...");
 };
 
 const publish = async () => {
+  console.log("开始发布代码...");
   await processExec("npm publish");
+  console.log("发布完成...");
 };
 
 const main = async () => {
