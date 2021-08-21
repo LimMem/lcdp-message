@@ -10,6 +10,7 @@ function packageConfig(mode = "production") {
       path: path.resolve(__dirname, `dist/${packageJson.version}`),
       filename: mode === "production" ? "lcdpmessage.min.js" : "lcdpmessage.js",
       library: "LcdpMessage",
+      libraryTarget: "umd",
     },
     plugins: [
       new webpack.LoaderOptionsPlugin({
