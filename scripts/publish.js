@@ -76,6 +76,7 @@ const main = async () => {
     await build();
     await publish();
     await commitAllCodeToGit();
+    console.log("🍺successful:", "你已发布完成");
   } catch (error) {
     console.error("error:", error);
   }
